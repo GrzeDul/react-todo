@@ -20,7 +20,7 @@ const Column = ({ title, icon, addCard, id }) => {
           <Card key={card.id} title={card.title} />
         ))}
       </ul>
-      <CardForm action={addCard} columnId={id} />
+      <CardForm columnId={id} />
     </article>
   );
 };
