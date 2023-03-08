@@ -13,6 +13,8 @@ const reducer = (state, action) => {
         ...state,
         cards: [...state.cards, { ...action.payload, id: shortId() }],
       };
+    case 'CHANGE_QUERY':
+      return { ...state, query: action.payload };
     default:
       return state;
   }

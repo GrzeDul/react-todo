@@ -4,9 +4,13 @@ import styles from './Column.module.scss';
 import Card from '../Card/Card';
 import CardForm from '../CardForm/CardForm';
 
-const Column = ({ title, icon, addCard, id }) => {
+const Column = ({ title, icon, id }) => {
   const cards = useSelector((state) =>
-    state.cards.filter((card) => card.columnId === id)
+    state.cards.filter(
+      (card) =>
+        card.columnId === id &&
+        card.title.toLowerCase().includes(state.query.toLowerCase())
+    )
   );
 
   return (
