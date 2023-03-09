@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { changeSearchString } from '../../redux/store';
 import { useDispatch } from 'react-redux';
 import styles from './SearchForm.module.scss';
 import TextInput from '../TextInput/TextInput';
@@ -6,19 +7,19 @@ import Button from '../Button/Button';
 
 const SearchForm = () => {
   const dispatch = useDispatch();
-  const [query, setQuery] = useState('');
+  const [searchString, setSearchString] = useState('');
 
   const handleSearchForm = (e) => {
     e.preventDefault();
-    dispatch({ type: 'CHANGE_SEARCHQUERY', payload: query });
+    dispatch(changeSearchString(searchString));
   };
   return (
     <form className={styles.searchForm} onSubmit={handleSearchForm}>
       <TextInput
         placeholder='Search...'
-        value={query}
+        value={searchString}
         onChange={(e) => {
-          setQuery(e.target.value);
+          setSearchString(e.target.value);
         }}
       />
       <Button>
