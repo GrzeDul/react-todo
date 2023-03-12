@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { changeSearchString } from '../../redux/store';
 import { useDispatch } from 'react-redux';
 import styles from './SearchForm.module.scss';
@@ -8,6 +8,10 @@ import Button from '../Button/Button';
 const SearchForm = () => {
   const dispatch = useDispatch();
   const [searchString, setSearchString] = useState('');
+
+  useEffect(() => {
+    dispatch(changeSearchString(searchString));
+  }, []);
 
   const handleSearchForm = (e) => {
     e.preventDefault();
