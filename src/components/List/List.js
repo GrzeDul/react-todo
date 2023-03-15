@@ -1,5 +1,6 @@
 import React from 'react';
-import { getColumnsByList, getListById } from '../../redux/store';
+import { getColumnsByList } from '../../redux/columnsRedux';
+import { getListById } from '../../redux/listsRedux';
 import { useSelector } from 'react-redux';
 import { useParams, Navigate } from 'react-router';
 import styles from './List.module.scss';

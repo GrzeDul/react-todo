@@ -4,7 +4,7 @@ const About = () => {
   return (
     <Container>
       <PageTitle>About</PageTitle>
-      <p>Lorem Ipsum</p>
+      <p>Columns with to-do cards that you can add to favorites</p>
     </Container>
   );
 };
